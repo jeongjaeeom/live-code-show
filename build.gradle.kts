@@ -1,17 +1,19 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.6.21"
-    kotlin("plugin.spring") version "1.6.21" apply false
-    id("org.springframework.boot") version "2.7.0" apply false
-    id("io.spring.dependency-management") version "1.0.11.RELEASE" apply false
+    kotlin("jvm")
+    kotlin("plugin.spring") apply false
+    id("org.springframework.boot") apply false
+    id("io.spring.dependency-management") apply false
 }
 
 java.sourceCompatibility = JavaVersion.VERSION_17
 
+val projectGroup: String by project
+val applicationVersion: String by project
 allprojects {
-    group = "io.dodn"
-    version = "0.0.1-SNAPSHOT"
+    group = projectGroup
+    version = applicationVersion
 
     repositories {
         mavenCentral()
