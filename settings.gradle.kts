@@ -1,7 +1,8 @@
 rootProject.name = "live-code-show"
 
 include(
-    "live-code-show-api"
+    "live-code-show-api",
+    "support:logging"
 )
 
 pluginManagement {
