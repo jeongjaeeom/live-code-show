@@ -1,6 +1,6 @@
 package io.dodn.livecodeshow.storage.db.main
 
-import javax.persistence.Entity
+import jakarta.persistence.Entity
 
 @Entity
 internal class UserEntity(
