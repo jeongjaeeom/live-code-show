@@ -2,6 +2,7 @@ rootProject.name = "live-code-show"
 
 include(
     "live-code-show-api",
+    "domain",
     "support:logging",
     "storage:db-main"
 )
