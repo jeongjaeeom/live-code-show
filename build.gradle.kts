@@ -8,7 +8,7 @@ plugins {
     id("io.spring.dependency-management")
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.valueOf("VERSION_${property("javaVersion")}")
 
 val projectGroup: String by project
 val applicationVersion: String by project
@@ -50,10 +50,11 @@ subprojects {
         enabled = true
     }
 
+    java.sourceCompatibility = JavaVersion.valueOf("VERSION_${property("javaVersion")}")
     tasks.withType<KotlinCompile> {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "17"
+            jvmTarget = "${project.property("javaVersion")}"
         }
     }
 
